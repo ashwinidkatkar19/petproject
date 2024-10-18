@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+<!-- extends must be mentioned on first line of the child template -->
+{% load static %}
+{% block 'main' %}
+<form action="" method="post" class="col-md-4 mx-auto mt-5 shadow rounded p-2">
+    {% csrf_token %}
+
+    <!-- {% if error %}
+  <div class="alert alert-danger">
+    {{error}}
+  </div>
+  {% endif %} -->
+    <h3>Edit Profile</h3>
+    <div class="form-group">
+        <label>Username:</label>
+        <input type="text" class="form-control" name="username" readonly value="{{ user.username }}">
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" name="email" readonly value="{{ user.email }}">
+    </div>
+    <div class="form-group">
+        <label>First Name:</label>
+        <input type="firstname" class="form-control" name="firstname">
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+        <input type="lastname" class="form-control" name="lastname">
+    </div>
+    <div class="form-group">
+        <label>Mobile:</label>
+        <input type="mobile" class="form-control" name="mobile">
+    </div>
+    <div class="mb-3">
+        <label class="form-label"> Address: </label>
+        <textarea class="form-control" rows="3" name="address"></textarea>
+    </div>
+    <input type="submit" class=" mt-2 btn btn-warning" value="Update">
+    &nbsp; &nbsp;
+    Already a user? <a href="/login">Sign In</a>
+</form>
+{% endblock 'main' %}

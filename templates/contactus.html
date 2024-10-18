@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+<!-- extends must be mentioned on first line of the child template -->
+{% load static %}
+{% block 'main' %}
+<div class="col-md-6">
+    <i class="bi bi-geo-alt-fill" style="font-size:20px; "></i><br>
+    <p>2nd floor, Ishan Arcade, 1, Gokhale Rd, opposite Gaondevi Mandir, above Canara Bank, Shivaji Path, Dada Patil
+        Wadi, Naupada, Thane West, Thane, Maharashtra 400602
+    </p>
+    <h3>Contact Details:</h3>
+    <i class="bi bi-telephone-fill" style="font-size:20px; "></i> 9123456789 <br>
+    <i class="bi bi-envelope-fill" style="font-size:20px; "></i> officeHR@companyname.com
+</div>
+<div class=" col-md-6">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15072.691155420753!2d72.9741129!3d19.187654!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8d834c00235%3A0x89ff617b4a6cbf6f!2sItvedant%20Education%20Pvt.%20Ltd%20-%20Thane!5e0!3m2!1sen!2sin!4v1722312820802!5m2!1sen!2sin"
+        height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+{% endblock 'main' %}

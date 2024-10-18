@@ -1,0 +1,25 @@
+<div class="box col-2 bg-light">
+  <h5 class="mt-2">Filter By category</h5>
+  <hr>
+  <a href="/">All Products</a><br>
+  <!-- <a href="">Mobiles</a><br>
+  <a href="">Clothing</a><br>
+  <a href="">Accessories</a><br> -->
+
+  {% for d in types %}
+  <a href="/search/{{d.type}}">{{ d.type }}</a><br>
+  {% endfor %}
+  <h5 class="mt-2">Filter By Price</h5>
+  <hr>
+  <form action="/seachbyrange">
+    <label class="col-form-label">Min:</label>
+    <input type="text" class="form-control" name="min">
+    <label class="col-form-label">Max:</label>
+    <input type="text" name="max" class="form-control">
+    <input class="mt-2 btn btn-warning" type="submit" value="Search">
+  </form>
+  <h5 class="mt-2">Sort By Price</h5>
+  <hr>
+  <a href="/sort/asc">Low to High</a><br>
+  <a href="/sort/desc">High to Low</a>
+</div>

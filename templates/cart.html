@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+<!-- extend must be mentioned on first line of the child template -->
+{% load static %}
+{% block 'main' %}
+
+<div class="box col-8">
+   <h3 class="bg-warning">Products</h3>
+   {% for cart in cartlist %}
+   <div class="row m-2">
+      <div class="col-6">
+         <img src="{{ cart.pid.imagepath.url }}" alt="" width="100%" height="150px">
+      </div>
+      <div class="col-6">
+         <h3>{{ cart.pid.name }}</h3>
+         <strong>Rs. {{ cart.pid.price }}</strong><br>
+         Quantity:
+         {% if cart.quantity %}
+         <a class="btn btn-warning" href="/updatecount/{{cart.id}}/decr">-</a>
+         {% endif %}
+         <strong>{{ cart.quantity }}</strong>
+         <a class="btn btn-warning" href="/updatecount/{{cart.id}}/incr">+</a>
+         <br>
+         <a class="btn btn-warning" href="/removecart/{{cart.id}}">Remove</a>
+      </div>
+
+   </div>
+   {% endfor %}
+   <!-- <div class="row m-2" >
+       <div class="col-6">
+          <img src="../static/images/download.jpg" alt="" width="100%" height="150px">
+       </div>
+       <div class="col-6">
+          <h3>Product name</h3>
+          <strong>Rs. 20000</strong><br>
+          Quantity: 
+          <button class="btn btn-warning">-</button>
+          <input type="text" name="" id="" value="1" >
+          <button class="btn btn-warning">+</button>
+          <br>
+          <button class="btn btn-warning">Remove</button>
+       </div>                     
+    </div> -->
+   <!-- <div class="row m-2" >
+       <div class="col-6">
+          <img src="../static/images/download.jpg" alt="" width="100%" height="150px">
+     </div>
+       <div class="col-6">
+          <h3>Product name</h3>
+          <strong>Rs. 20000</strong><br>
+          Quantity: 
+          <button class="btn btn-warning">-</button>
+          <input type="text" name="" id="" value="1">
+          <button class="btn btn-warning">+</button>
+          <br>
+          <button class="btn btn-warning">Remove</button>
+       </div>
+       
+    </div> -->
+</div>
+<div class="box col-4">
+   <h3 class="bg-warning">Summary</h3>
+   <h4>Items Count: {{count}} </h4>
+   <h4>Total Amount: Rs. {{total}} </h4>
+   <br>
+   <a class="btn btn-warning" href="/confirmorder">Confirm Order</a>
+   <a class="btn btn-warning" href="/">Shop More</a>
+   </h3>
+</div>
+
+{% endblock 'main' %}

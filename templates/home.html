@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- Option 1: Include in HTML -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="myrow1 row">
+      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register.html">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- end of row 1    -->
+    <div class="myrow2 row  mt-2">
+      <div class="box col-2 bg-light">
+        <h5 class="mt-2">Filter By category</h5>
+        <hr>
+        <a href="">All Products</a><br>
+        <a href="">Mobiles</a><br>
+        <a href="">Clothing</a><br>
+        <a href="">Accessories</a><br>
+        <h5 class="mt-2">Filter By Price</h5>
+        <hr>
+        <form action="">
+          <label class="col-form-label">Min:</label>
+          <input type="text" class="form-control" name="min">
+          <label class="col-form-label">Max:</label>
+          <input type="text" name="max" class="form-control">
+          <input class="mt-2 btn btn-warning" type="submit" value="Search">
+        </form>
+        <h5 class="mt-2">Sort By Price</h5>
+        <hr>
+        <a href="">Low to High</a><br>
+        <a href="">High to Low</a>
+      </div>
+      <div class="box col-10">
+        <div class="row mx-auto">
+          <!-- product 1  -->
+          <div class="card col-md-3 m-2">
+            <img src="{% static 'images/download.jpg'%}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Product Name</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <strong>Rs. 20000 </strong><br>
+              <a href="details.html" class="btn btn-warning">View Details</a>
+              <a href="#" class="btn btn-warning">Add To Cart</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="myrow3 row">
+      <div class="box col-4">
+        <i class="bi bi-geo-alt-fill" style="font-size:20px; "></i><br>
+        2nd floor, Ishan Arcade, 1, Gokhale Rd, opposite Gaondevi Mandir, above Canara Bank, Shivaji Path, Dada Patil
+        Wadi, Naupada, Thane West, Thane, Maharashtra 400602
+      </div>
+      <div class="box col-4">
+        Contact Us: <br>
+        <i class="bi bi-telephone-fill" style="font-size:20px; "></i> 9123456789 <br>
+        <i class="bi bi-envelope-fill" style="font-size:20px; "></i> officeHR@companyname.com
+      </div>
+      <div class="box col-4">
+        <a href=""><i class="bi bi-linkedin" style="font-size:20px; "></i></a><br>
+        <a href=""><i class="bi bi-twitter" style="font-size:20px; "></i></a><br>
+        <a href=""><i class="bi bi-whatsapp" style="font-size:20px; "></i></a><br>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/bootstrap.min.js'%}"></script>
+</body>
+
+</html>

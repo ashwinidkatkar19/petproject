@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+<!-- extends must be mentioned on first line of the child template -->
+{% load static %}
+{% block 'main' %}
+<form action="" method="post" class="col-md-4 mx-auto mt-5 shadow rounded p-2">
+  {% csrf_token %}
+  {% for msg in messages %}
+  {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+  <div class="alert alert-success">
+    {{ msg }}
+  </div>
+
+  {% elif msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+  <div class="alert alert-info">
+    {{ msg }}
+  </div>
+  {% endif %}
+
+  {% endfor %}
+  <!-- {% if error %}
+  <div class="alert alert-danger">
+    {{error}}
+  </div>
+  {% endif %} -->
+  <h3>Login</h3>
+  <div class="form-group">
+    <label>Username:</label>
+    <input type="text" class="form-control" name="username">
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+  <input type="submit" class=" mt-2 btn btn-warning" value="Login">
+  &nbsp; &nbsp;
+  Not a user? <a href="/register">Sign Up</a>
+</form>
+{% endblock 'main' %}
